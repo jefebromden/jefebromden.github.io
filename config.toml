@@ -1,0 +1,11 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Rosendo Ayala'
+theme = 'LoveIt'
+
+[params.header.title]
+  name = 'Rosendo Ayala'
+
+[params.home.profile]
+  title = 'Rosendo Ayala'
+  subtitle = 'Your life in The Shell'
