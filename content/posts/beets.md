@@ -13,7 +13,11 @@ pip install beets
 
 ## Quickstart
 ```bash
+# Import a whole folder
 beet import ~/Music
+
+# Import a single file, moving it to its new location
+beet import -m Charly_Garcia-Los_Dinosaurios.opus
 ```
 
 ## Configuration
