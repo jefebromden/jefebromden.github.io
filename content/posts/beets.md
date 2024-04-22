@@ -76,19 +76,41 @@ Files
 - `beets-noimport`: Add directories to the incremental import skip list (X)
 
 Miscellaneous
-- `beets-ydl`: downloads audio from youtube-dl (X)
+- `beets-ydl`: downloads audio from youtube-dl (X) (Deprecated)
 - `beets-autofix`: Automates repetitive tasks (X)
 
 Playback
 - `random`: Randomly choose albums and tracks from your library
 - `cmus`: Integrates with `cmus` music player(X)
 
+## Shell Completion
+You can get *completion script* by running `beet completion`. From there you have two options available.
+
+1. Loading the script dinamically. This will load an updated script every time `~/.bashrc` is sourced
+```bash
+echo 'eval "$(beet completion)"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+2. Dump the script into a file. If you're worry about loading times, use this option. The cabeat is that you will have to create a new script every time you add a new plugin
+```bash
+beet completion > ~/.beetrc
+echo 'source ~/.beetrc' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Be warned that you will have to escape special characters, for example for queries:
+```bash
+# Note the slash in front of the colon
+beet list artpath\:
+```
+
 ## Files and Directories
 - Database: ~/.config/beets/library.db
 - Music Directory: ~/Music
 
 ## References
-- [Beets ReadTheDocs](https://beets.readthedocs.io)
+- [Beets Options](https://beets.readthedocs.io/en/stable/guides/tagger.html#options)
 - [Inline Plugin](https://beets.readthedocs.io/en/stable/plugins/inline.html#inline-plugin)
 - [Template Functions](https://beets.readthedocs.io/en/stable/reference/pathformat.html#template-functions)
 - [Replace option](https://beets.readthedocs.io/en/stable/reference/config.html#replace)
