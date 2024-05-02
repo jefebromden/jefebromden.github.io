@@ -58,6 +58,7 @@ pluginpath:
 ```
 
 Some useful plugins. Those marked with `X` are external, the others native
+Those marked with `D` are deprecated, inactive projects
 
 Autotagger
 - `chroma`: Use Acoustid fingerprinting to identify audio files
@@ -80,12 +81,13 @@ Files
 - `beets-noimport`: Add directories to the incremental import skip list (X)
 
 Miscellaneous
-- `beets-ydl`: downloads audio from youtube-dl (X) (Deprecated)
+- `beets-ydl`: downloads audio from youtube-dl (X,D)
 - `beets-autofix`: Automates repetitive tasks (X)
 
 Playback
 - `random`: Randomly choose albums and tracks from your library
 - `cmus`: Integrates with `cmus` music player(X)
+- `play`: sends the results of a music query to your music player (X,D)
 
 ## Shell Completion
 You can get *completion script* by running `beet completion`. From there you have two options available.
