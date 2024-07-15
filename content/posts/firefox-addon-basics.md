@@ -1,22 +1,21 @@
 ---
 title: "Firefox Addon Basics"
-author: "Rosendo Ayala"
+author: "JefeBromden"
 date: 2024-05-01T10:38:02-03:00
-draft: true
+draft: false
 ---
 
 # Firefox Addon Basics
 The following knowledge is assumed:
-- Bash interpreter. Althought is just used to create directories and plain text files to simplified this cookbook. You can use a file explorer and any text editor
-- The syntax of the following formats:
-  - `json`
-  - `javascript`
+- `Bash`. Althought it's just used to interact with `Hugo`. The rest of the commands are used to create directories and plain text files to simplify writing this cookbook. You can use a file explorer and any text editor for that
+- The `json` format of the following languages:
+  - `Javascript`
   - `HTML`
   - `CSS`
 
 ## Install
 ### Create an Addon
-If you have an extension already, you can skip to the next subseccion. This addon doesn't do anything, it's just a proof of concept
+If you have an extension already, you can skip to the next subsection. This addon doesn't do anything, it's just a proof of concept
 ```bash
 mkdir ~/link-extractor && pushd $_
 cat > manifest.json << EOF
@@ -28,7 +27,7 @@ cat > manifest.json << EOF
 }
 ```
 
-This is the `Addon`, everything you can to add to it goes between those two brakets
+This is the `Addon`, everything you can add to it goes between those two brakets
 
 ### Load the Addon
 1. On the browser, go to `about:debugging`
@@ -39,20 +38,20 @@ This is the `Addon`, everything you can to add to it goes between those two brak
 Now that the addon is created, when you make a change on the extension, you have to come back to this page and click on `Reload`
 
 ## Cookbook
-Every keyword on the `manifest.json` file are called `shotcut`
+Every keyword on the `manifest.json` file are called `shortcut`
 Before adding a shortcut, don't forget to add a colon after the last line on the `json` file
 
 ### Adding Functionality
 There are four ways to add functionality to an addon. Some has its own shortcuts:
-- `background_script`: Is a single long-running process. You can use them, for example, to collect some statistics on the sites you visit
-
-- `Content Scripts`: Executed on a specific pages. You can use the DOM to read details and make changes on the page, like styling. You can inser this kind of script in two ways:
+- `Content Scripts`: Executed on a specific pages. You can use the DOM to read details and make changes on the page, like styling. You can insert this kind of script in two ways:
   - Injecting a script from a `Background Script`[1]
   - Using the `content_script` shortcut
 
 - Using a `browser_action` popup. It gets terminated when it is closed[2]. With this option, you can call the script by:
   - Adding a `listener` on the background script
   - Using a `script tag` on the popup itself
+
+- `background_script`: Is a single long-running process. You can use them, for example, to collect some statistics on the sites you visit
 
 #### Using the `content_script` shortcut
 - Point to the `javascript` script you want to execute on the page

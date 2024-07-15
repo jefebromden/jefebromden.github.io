@@ -1,6 +1,6 @@
 ---
 title: "Deploy Hugo to Github Pages"
-author: "Rosendo Ayala"
+author: "JefeBromden"
 date: 2024-04-02T10:42:05-03:00
 draft: true
 ---

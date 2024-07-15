@@ -1,8 +1,8 @@
 ---
 title: "Cmus"
-author: "Rosendo Ayala"
+author: "JefeBromden"
 date: 2024-04-20T20:35:14-03:00
-draft: true
+draft: false
 ---
 
 # Cmus - C Music Player
@@ -28,6 +28,6 @@ Right Hand:
 - `Left Arrow`: Backward 5 seconds
 - `Right Arrow`: Foreward 5 seconds
 
-For *albums*, just add the `Shift` key:
+For *albums*, just combine playback shortcuts and `Shift` key:
 - `Shift+Z`: Previous album
 - `Shift+B`: Next album

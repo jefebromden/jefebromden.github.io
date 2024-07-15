@@ -1,8 +1,8 @@
 ---
 title: "Beets"
-author: "Rosendo Ayala"
+author: "JefeBromden"
 date: 2024-04-20T09:04:10-03:00
-draft: true
+draft: false
 ---
 # Beets Music Tagger
 ## Installation

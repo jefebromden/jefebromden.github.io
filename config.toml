@@ -3,9 +3,13 @@ languageCode = 'en-us'
 title = 'JefeBromden'
 theme = 'LoveIt'
 
-[params.header.title]
-  name = 'JefeBromden'
+[params]
+  title = 'Weekly Thoughts'
+  description = 'My notes on Open Source, Language and Science'
 
-[params.home.profile]
-  title = 'JefeBromden'
-  subtitle = 'Your life in The Shell'
+  [params.header.title]
+    name = 'JefeBromden'
+
+  [params.home.profile]
+    title = 'JefeBromden'
+    subtitle = 'Your life in The Shell'

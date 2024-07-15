@@ -1,8 +1,8 @@
 ---
 title: "Yewtube"
-author: "Rosendo Ayala"
+author: "JefeBromden"
 date: 2024-04-21T17:16:17-03:00
-draft: true
+draft: false
 ---
 
 # Yewtube - Terminal YouTube Player
