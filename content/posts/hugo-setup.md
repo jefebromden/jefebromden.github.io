@@ -2,7 +2,7 @@
 title: "Hugo Cookbook"
 author: "JefeBromden"
 date: 2024-03-03T13:07:49-03:00
-draft: true
+draft: false
 ---
 
 # Hugo Cookbook
