@@ -10,9 +10,13 @@ theme = 'LoveIt'
   [params.header.title]
     name = 'JefeBromden'
 
+  [params.header.footer]
+    # Inject invisible Mastodon rel="me" link
+    mastodonRelme = true
+
   [params.home.profile]
     title = 'JefeBromden'
     subtitle = 'Your life in The Shell'
 
   [params.social]
-    Mastodon = 'https://jefebromden.github.io'
+    Mastodon = 'https://mastodon.social/@jefebromden'
