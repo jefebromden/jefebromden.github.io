@@ -15,4 +15,4 @@ theme = 'LoveIt'
     subtitle = 'Your life in The Shell'
 
   [params.social]
-    Mastodon = 'https://mastodon.social/@jefebromden'
+    Mastodon = 'https://jefebromden.github.io'
