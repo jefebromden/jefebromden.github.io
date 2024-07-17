@@ -13,3 +13,6 @@ theme = 'LoveIt'
   [params.home.profile]
     title = 'JefeBromden'
     subtitle = 'Your life in The Shell'
+
+  [params.social]
+    Mastodon = 'https://mastodon.social/@jefebromden'
