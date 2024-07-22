@@ -50,4 +50,10 @@ echo 'About me' >> content/about.md
 # Move About Page to a Leaf Bundle
 mkdir content/about
 mv content/about.md content/about/index.md
+
+# Use language codes for i18 compatibility
+hugo new about/index.es.md
+pushd content/about
+mv index.md index.en.md
+popd
 ```
