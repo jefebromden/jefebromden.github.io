@@ -2,3 +2,6 @@ main:
 - name: Posts
   pageRef: /posts
   weight: 10
+- name: About
+  pageRef: /about
+  weight: 20
