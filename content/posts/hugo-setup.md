@@ -51,7 +51,7 @@ echo 'About me' >> content/about.md
 mkdir content/about
 mv content/about.md content/about/index.md
 
-# Use language codes for i18 compatibility
+# Use language codes on file names for i18 compatibility
 hugo new about/index.es.md
 pushd content/about
 mv index.md index.en.md
