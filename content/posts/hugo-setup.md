@@ -37,3 +37,17 @@ hugo server         # Web Server is available at http://localhost:1313
 hugo server -D      # Build drafts
 hugo server -p 1314 # Change default port
 {{< / highlight >}}
+
+# Create About Page
+Open a new tab on your terminal emulator
+```bash
+# Create About Page
+hugo new about.md
+
+# Add content
+echo 'About me' >> content/about.md
+
+# Move About Page to a Leaf Bundle
+mkdir content/about
+mv content/about.md content/about/index.md
+```
