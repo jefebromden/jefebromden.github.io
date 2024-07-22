@@ -38,7 +38,7 @@ hugo server -D      # Build drafts
 hugo server -p 1314 # Change default port
 {{< / highlight >}}
 
-# Create About Page
+## Create About Page
 Open a new tab on your terminal emulator
 ```bash
 # Create About Page
