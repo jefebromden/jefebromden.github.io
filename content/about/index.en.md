@@ -1,0 +1,10 @@
+---
+title: "About Me"
+author: "JefeBromden"
+date: 2024-07-22T14:37:10-03:00
+draft: false
+---
+
+This is my journey through the Terminal, my efforts to understand the Web, and my constant search for Thruth.
+
+In this blog I'm gonna try to explain why I like Shell/Terminal/Prompt so much, its basic working, how you can use it to automate boring tasks, and, hopefully, find words to argument why I consider is the new writing for centuries to come. Just as printer helped us spread knowledge analogously, Shell can help us doing the same in digital form.
