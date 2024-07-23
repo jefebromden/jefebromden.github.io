@@ -85,13 +85,14 @@ mv config.toml _config.toml
 
 # Make a small change for testing purposes
 # This is gonna set browser's tab title
-sed -i '/^title/ s/My*.*Site/Cookbooks/p' hugo.yml
+sed -i '/^title/ s/My*.*Site/Cookbooks/' hugo.yml
 ```
 After creating a new configuration, you're gonna have to restart server.
 
 Come back to the tab where it is running, press `Ctrl+C` to stop it, and then run `hugo server` to start it
 
-If the configuration is working
+# Use Directory Structure for Configuration
+If the configuration is working correctly, 
 
 ## Why You Need Leaf Bundles
 Open a new tab on your terminal emulator
