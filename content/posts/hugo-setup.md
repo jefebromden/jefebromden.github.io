@@ -38,7 +38,7 @@ hugo server -D      # Build drafts
 hugo server -p 1314 # Change default port
 {{< / highlight >}}
 
-## Create About Page
+## Why You Need Leaf Bundles
 Open a new tab on your terminal emulator
 ```bash
 # Create About Page
@@ -47,7 +47,9 @@ hugo new about.md
 # Add content
 echo 'About me' >> content/about.md
 
-# Move About Page to a Leaf Bundle
+# If the content gets too big, you can
+# move a page to a Leaf Bundle,
+# so you can divide content in pages
 mkdir content/about
 mv content/about.md content/about/index.md
 
