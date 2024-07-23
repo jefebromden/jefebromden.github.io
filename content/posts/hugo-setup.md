@@ -73,7 +73,7 @@ cat > config/_default/menus.yml << EOF
   weight: 1
 EOF
 ```
-`name` and `pageRef` are self explanatory. `weight` field refers to priority in menu hierarchy. A lowest number will appear to the left on LTR (Left To Right) languages
+`name` and `pageRef` are self explanatory. `weight` field refers to priority in menu hierarchy. A lowest number will appear to the left on [LTR](https://en.wikipedia.org/wiki/Writing_system#Directionality) languages
 
 ## Multilanguage
 ```bash
