@@ -52,8 +52,12 @@ echo 'About me' >> content/about.md
 # so you can divide content in pages
 mkdir content/about
 mv content/about.md content/about/index.md
+```
 
-# Use language codes on file names for i18 compatibility
+## Multilanguage
+```bash
+# If you write content in more than one language,
+# use language codes on file names for i18 compatibility
 hugo new about/index.es.md
 pushd content/about
 mv index.md index.en.md
