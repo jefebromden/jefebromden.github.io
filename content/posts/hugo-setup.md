@@ -23,7 +23,7 @@ pushd renaissance
 git init
 git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 # Since Hugo 0.109.0, configuration changed from `config.toml` to `hugo.toml`
-echo "theme = 'LoveIt'" >> hugo.toml
+echo "theme = 'LoveIt'" >> config.toml
 
 # Add a .gitignore file to exclude unnecessary directories and files when building 
 cat > .gitignore << EOF
