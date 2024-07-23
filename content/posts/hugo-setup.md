@@ -55,6 +55,26 @@ mv content/about.md content/about/index.md
 ```
 For a more in depth explanation of Leaf Bundles go to [GoHugo.io](https://gohugo.io/content-management/page-bundles/#leaf-bundles)
 
+## Menu Entries For Navigation
+To be able to access a new section, in this case, a new Bundle for About page, you have to add a button to the interface.
+
+Menu entries can be specified in various ways, you can read about it [here](https://gohugo.io/content-management/multilingual/#menus). We're gonna use a *configuration directory* because is the most simple and comfortable way on the long run, it allow us to centralize your preferences and divide it on different files if necessary
+```bash
+# Create directory structure
+mkdir -pv config/_default
+
+# Move configuration to new location
+mv config.toml config/_default/
+
+# Create menu entry
+cat > config/_default/menus.yml << EOF
+- name: About
+  pageRef: /about
+  weight: 1
+EOF
+```
+`name` and `pageRef` are self explanatory. `weight` field refers to priority in menu hierarchy. A lowest number will appear to the left on LTR (Left To Right) languages
+
 ## Multilanguage
 ```bash
 # If you write content in more than one language,
