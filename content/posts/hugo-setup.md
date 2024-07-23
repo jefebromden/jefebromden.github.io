@@ -16,8 +16,8 @@ dnf install hugo
 hugo version
 
 # Create new site
-hugo new site renaissance
-pushd renaissance
+hugo new site cookbooks
+pushd cookbooks
 
 # Add theme
 git init
@@ -90,6 +90,8 @@ sed -i '/^title/ s/My*.*Site/Cookbooks/p' hugo.yml
 After creating a new configuration, you're gonna have to restart server.
 
 Come back to the tab where it is running, press `Ctrl+C` to stop it, and then run `hugo server` to start it
+
+If the configuration is working
 
 ## Why You Need Leaf Bundles
 Open a new tab on your terminal emulator
