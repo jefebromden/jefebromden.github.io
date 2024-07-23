@@ -8,7 +8,7 @@ draft: false
 # Hugo Cookbook
 ## Quickstart
 The minimal commands to build the site are highlighted
-{{< highlight bash "hl_lines=2 8-9 12-13 15 26" >}}
+{{< highlight bash "hl_lines=2 8-9 12-14 24" >}}
 # Install (Fedora)
 dnf install hugo
 
@@ -22,7 +22,6 @@ pushd renaissance
 # Add theme
 git init
 git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
-# Since Hugo 0.109.0, configuration changed from `config.toml` to `hugo.toml`
 echo "theme = 'LoveIt'" >> config.toml
 
 # Add a .gitignore file to exclude unnecessary directories and files when building 
@@ -37,6 +36,60 @@ hugo server         # Web Server is available at http://localhost:1313
 hugo server -D      # Build drafts
 hugo server -p 1314 # Change default port
 {{< / highlight >}}
+
+## Convert TOML Configuration to YAML
+The default format for configuration in Hugo is *TOML*, which looks for example, like this:
+```toml
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'LoveIt'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false
+```
+
+The same configuration in *YAML*, on the other hand, looks like this:
+```yaml
+baseURL: http://example.org/
+languageCode: en-us
+title: My New Hugo Site
+theme: LoveIt
+
+markup:
+  goldmark:
+    parser:
+      wrapStandAloneImageWithinParagraph: false
+```
+Which is more clearer. For a more detailed explanation on why *YAML* is a better format, [read this article](https://www.brycewray.com/posts/2023/05/organizing-hugo-configuration/)
+
+To convert to *YAML*, on *Linux*, you can use [Yq](https://github.com/mikefarah/yq).
+
+Open a new tab on your terminal emulator:
+```bash
+# Install (Fedora)
+dnf install yq
+
+# Check version
+yq --version
+
+# Convert
+# Since Hugo 0.109.0, configuration changed from `config.toml` to `hugo.toml`
+# `-oy` option specifies output format (*YAML*)
+yq -oy config.toml > hugo.yml
+
+# Rename old configuration file so Hugo won't read it
+mv config.toml _config.toml
+
+# Make a small change for testing purposes
+# This is gonna set browser's tab title
+sed -i '/^title/ s/My*.*Site/Cookbooks/p' hugo.yml
+```
+After creating a new configuration, you're gonna have to restart server.
+
+Come back to the tab where it is running, press `Ctrl+C` to stop it, and then run `hugo server` to start it
 
 ## Why You Need Leaf Bundles
 Open a new tab on your terminal emulator
