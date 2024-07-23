@@ -53,6 +53,7 @@ echo 'About me' >> content/about.md
 mkdir content/about
 mv content/about.md content/about/index.md
 ```
+For a more in depth explanation of Leaf Bundles go to [GoHugo.io](https://gohugo.io/content-management/page-bundles/#leaf-bundles)
 
 ## Multilanguage
 ```bash
@@ -63,3 +64,4 @@ pushd content/about
 mv index.md index.en.md
 popd
 ```
+Read [Hugo Documentation](https://gohugo.io/content-management/multilingual/#configure-languages) for more info on multilanguage
