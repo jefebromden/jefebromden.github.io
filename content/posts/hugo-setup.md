@@ -7,7 +7,7 @@ draft: false
 
 # How to Create a Basic Site With Hugo
 ## Creating a New Site
-To simplify this tutorial, I'll use command to install on my current platform, *Fedora Linux*. You can check the Web for the corresponding command for your platform. Hugo is multi-platform, so the rest of commands should work.
+To simplify this guide, I will use the command to install on my current platform, *Fedora Linux*. You can check the Web for the corresponding command on your platform. Hugo is multi-platform, so the rest of the commands should work.
 ```bash
 # Install (Fedora)
 dnf install hugo
@@ -17,17 +17,16 @@ hugo version
 
 # Create new site
 hugo new site cookbooks
-cd cookbooks
 ```
 
-This will create the basic directory structure of the site. On *Linux*, you can check it out with `tree` command:
+This will create the basic directory structure of the site. On *Linux*, you can check it out with the `tree` command:
 ```bash
-tree
+tree cookbooks
 .
 ├── archetypes
 │   └── default.md
 ├── assets
-├── config.toml
+├── hugo.toml
 ├── content
 ├── data
 ├── layouts
@@ -43,7 +42,7 @@ To render content, *Hugo* uses *Themes*, which contains the necessary *HTML* cod
 
 You have two ways to add a *Theme*. You can write your own from scratch, or you can use one that somebody else write for you. To simplify this guide, we'll be using an already made theme.
 
-There are plenty of *Themes* out there. The problem with most of them is that they use `Node`. I  don't have any problems with `Node`, but when you're trying to host a simple *Static Site*, it feels really bloated.
+There are plenty out there. The problem with most of them is that they use `Node`. I  don't have any problems with `Node`, but when you're trying to host a simple *Static Site*, it feels really bloated.
 
 To find a *minimalistic* theme, you can search the Web and try one by one (what I did), or you can you use GitHub Search with `NOT` operator: `hugo theme NOT node`. Try to sponsor the project you choose whenever you can.
 
@@ -58,16 +57,18 @@ I choose [LoveIt](https://github.com/dillonzq/LoveIt) for various reasons:
 ## Creating Git Repository
 With most themes, you have two ways to use them, with a *Hugo Module*, or a *Git Submodule*. To use it as a *Hugo Module* you may have to eventually learn basic *Go* syntax, and that will shift the focus from this guide.
 
-Since I'll be using *Git* to save the project, we'll use a submodule. Be sure to `cd` on the site directory to run the command.
+Since I'll be using *Git* to save the project, we'll use a submodule.
 ```bash
 # Create repository
+cd cookbooks
 git init
 ```
+You don't have to know to use *Git* to make you're site, you just need two commands to add the theme. You do need it to deploy it. Make sure you *bookmark* this page, I'll be adding a basic introduction to *Git Workflow* to run you own blog. 
 
 ## Adding Theme
-To use the theme on your site, you have run a command to add it as a *Git* submodule and add a single line to the configuration file to tell *Hugo* to use it.
+To use the theme on your site, you have to run a command to add it as a *Git* submodule and add a single line to the configuration file to tell *Hugo* to use it.
 ```bash
-# Add submodule. Change URL and destination directory accordingly
+# Add submodule. Change URL and destination directory accordingly to your theme
 git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 
 # Set the theme on Hugo's configuration.
@@ -77,7 +78,7 @@ echo "theme = 'LoveIt'" >> hugo.toml
 ```
 
 ## Starting Server
-To show the site on the browser, *Hugo* uses a *Live Server*, which will be watching changes made on your site's directory structure and files. If a change is made, it will be reflected on the browser. 
+To show the site on the browser, *Hugo* uses a *Live Server*, which will be watching changes made on your site's directory structure and files. If a change is made, it will be reflected on the browser.
 ```bash
 # Start webserver
 hugo server
@@ -144,7 +145,7 @@ After creating a new configuration, you're gonna have to restart server.
 
 Come back to the tab where it is running, press `Ctrl+C` to stop it, and then run `hugo server` to start it
 
-# Use Directory Structure for Configuration
+## Use Directory Structure for Configuration
 Configuration files tend to get messy when customization grows. You can divide 
 If the configuration is working correctly, you can delete old configuration file
 
