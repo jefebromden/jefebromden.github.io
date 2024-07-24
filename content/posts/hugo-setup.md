@@ -21,7 +21,7 @@ hugo new site cookbooks
 
 This will create the basic directory structure of the site. On *Linux*, you can check it out with the `tree` command:
 ```bash
-tree cookbooks
+tree $_
 .
 ├── archetypes
 │   └── default.md
@@ -34,41 +34,47 @@ tree cookbooks
 ├── static
 └── themes
 ```
+> On *Bash* shell, `$_` variable holds the last argument of the last command. In this case, *cookbooks*.
 
 ## Choosing Theme
-By default, *Hugo* comes with no *HTML* pages, not even a basic one. If you try to run the site now, you'll get a *Page Not Found* page.
+By default, Hugo comes with no *HTML* pages, not even a basic one. If you try to run the site now, you'll get a *Page Not Found* page.
 
-To render content, *Hugo* uses *Themes*, which contains the necessary *HTML* code, *CSS* style and other assets like images and *Javascript* to show your content.
+To render content, Hugo uses *Themes*, which contains the necessary HTML code, *CSS* style and other assets like *images* and *Javascript* to show your content.
 
-You have two ways to add a *Theme*. You can write your own from scratch, or you can use one that somebody else write for you. To simplify this guide, we'll be using an already made theme.
+You have two ways to add a theme. You can write your own from scratch, or you can use one that somebody else write for you. To simplify this guide, we'll be using an already made theme.
 
-There are plenty out there. The problem with most of them is that they use `Node`. I  don't have any problems with `Node`, but when you're trying to host a simple *Static Site*, it feels really bloated.
+There are plenty out there. The problem with most of them is that they use *Node*. I  don't have any problems with Node, but when you're trying to host a simple *Static Site*, it feels really bloated.
 
 To find a *minimalistic* theme, you can search the Web and try one by one (what I did), or you can you use GitHub Search with `NOT` operator: `hugo theme NOT node`. Try to sponsor the project you choose whenever you can.
 
 I choose [LoveIt](https://github.com/dillonzq/LoveIt) for various reasons:
 - It focus on writing.
-- It *has* good documentation. You can check it out [here](https://www.hugoloveit.com)
+- It has good documentation. You can check it out [here](https://www.hugoloveit.com)
 - Simple.
 - Easy to use.
 - Visually attractive.
 - It has support for multi-language.
 
 ## Creating Git Repository
-With most themes, you have two ways to use them, with a *Hugo Module*, or a *Git Submodule*. To use it as a *Hugo Module* you may have to eventually learn basic *Go* syntax, and that will shift the focus from this guide.
+With most themes, you have two ways to use them, with a *Hugo Module*, or a *Git Submodule*. To use it as a Hugo module you may have to eventually learn basic *Go* syntax. I don't want to unnecessary shift the focus from this guide.
 
-Since I'll be using *Git* to save the project, we'll use a submodule.
+Since we'll be using *Git* to save the project on the cloud and deploy it, we'll use a submodule.
 ```bash
 # Create repository
-cd cookbooks
+cd $_
 git init
 ```
-You don't have to know to use *Git* to make you're site, you just need two commands to add the theme. You do need it to deploy it. Make sure you *bookmark* this page, I'll be adding a basic introduction to *Git Workflow* to run you own blog. 
+You don't have to know to use Git to make a site, you just need two commands to add the theme. You do need it to deploy it. Make sure you *bookmark* this page, I'll be adding a basic introduction to *Git Workflow* to run your own blog. 
 
 ## Adding Theme
-To use the theme on your site, you have to run a command to add it as a *Git* submodule and add a single line to the configuration file to tell *Hugo* to use it.
+Themes have to be placed under `themes` directory, in its own directory, and then be referenced on the configuration file.
+
+To use the theme on your site, you have to run two commands
+- *git*: to add your theme as a submodule
+- *echo*: to add a single line to the configuration file
 ```bash
 # Add submodule. Change URL and destination directory accordingly to your theme
+# The format is simple: `git submodule add repository_url theme_directory`
 git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 
 # Set the theme on Hugo's configuration.
@@ -78,7 +84,7 @@ echo "theme = 'LoveIt'" >> hugo.toml
 ```
 
 ## Starting Server
-To show the site on the browser, *Hugo* uses a *Live Server*, which will be watching changes made on your site's directory structure and files. If a change is made, it will be reflected on the browser.
+To show the site on browser, Hugo uses a *Live Server*, which will be watching changes made on your site's directory structure and files. If a change is made, it will be reflected on the browser.
 ```bash
 # Start webserver
 hugo server
@@ -87,9 +93,11 @@ Now you can go to `http://localhost:1313` on the browser and see the default loo
 
 As the output of the *Live Server* says, you have to press `Ctrl+C` to stop it.
 
-You won't be able to use the current terminal tab until you stop the server. To run commands from now on, you'll have to open a new one. You can use the mouse, or, if you're a keyboard freak like me, you can use the keyboard.
+<!-- TODO: Add Live Server screenshot -->
 
-The *Shortcut* may change depending on you're platform. On *Gnome Terminal*, the one I'm using, and in most terminals on *Linux* is `Ctrl+Shift+T`.
+You won't be able to use the current terminal tab until you stop the server. To run commands from now on, you'll have to open a new one. You can use the mouse, or, if you're a keyboard freak like me, you can use a *Shortcut*.
+
+This may change depending on you're platform. On *Gnome Terminal*, the one I'm using, and in most terminals on *Linux*, is `Ctrl+Shift+T`.
 
 ## Convert TOML Configuration to YAML
 The default format for configuration in Hugo is *TOML*, which looks for example, like this:
