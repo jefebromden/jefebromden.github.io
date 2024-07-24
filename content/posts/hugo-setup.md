@@ -5,10 +5,10 @@ date: 2024-03-03T13:07:49-03:00
 draft: false
 ---
 
-# Hugo Cookbook
-## Quickstart
-The minimal commands to build the site are highlighted
-{{< highlight bash "hl_lines=2 8-9 12-14 24" >}}
+# How to Create a Basic Site With Hugo
+## Creating a New Site
+To simplify this tutorial, I'll use command to install on my current platform, *Fedora Linux*. You can check the Web for the corresponding command for your platform. Hugo is multi-platform, so the rest of commands should work.
+```bash
 # Install (Fedora)
 dnf install hugo
 
@@ -17,25 +17,78 @@ hugo version
 
 # Create new site
 hugo new site cookbooks
-pushd cookbooks
+cd cookbooks
+```
 
-# Add theme
+This will create the basic directory structure of the site. On *Linux*, you can check it out with `tree` command:
+```bash
+tree
+.
+├── archetypes
+│   └── default.md
+├── assets
+├── config.toml
+├── content
+├── data
+├── layouts
+├── public
+├── static
+└── themes
+```
+
+## Choosing Theme
+By default, *Hugo* comes with no *HTML* pages, not even a basic one. If you try to run the site now, you'll get a *Page Not Found* page.
+
+To render content, *Hugo* uses *Themes*, which contains the necessary *HTML* code, *CSS* style and other assets like images and *Javascript* to show your content.
+
+You have two ways to add a *Theme*. You can write your own from scratch, or you can use one that somebody else write for you. To simplify this guide, we'll be using an already made theme.
+
+There are plenty of *Themes* out there. The problem with most of them is that they use `Node`. I  don't have any problems with `Node`, but when you're trying to host a simple *Static Site*, it feels really bloated.
+
+To find a *minimalistic* theme, you can search the Web and try one by one (what I did), or you can you use GitHub Search with `NOT` operator: `hugo theme NOT node`. Try to sponsor the project you choose whenever you can.
+
+I choose [LoveIt](https://github.com/dillonzq/LoveIt) for various reasons:
+- It focus on writing.
+- It *has* good documentation. You can check it out [here](https://www.hugoloveit.com)
+- Simple.
+- Easy to use.
+- Visually attractive.
+- It has support for multi-language.
+
+## Creating Git Repository
+With most themes, you have two ways to use them, with a *Hugo Module*, or a *Git Submodule*. To use it as a *Hugo Module* you may have to eventually learn basic *Go* syntax, and that will shift the focus from this guide.
+
+Since I'll be using *Git* to save the project, we'll use a submodule. Be sure to `cd` on the site directory to run the command.
+```bash
+# Create repository
 git init
+```
+
+## Adding Theme
+To use the theme on your site, you have run a command to add it as a *Git* submodule and add a single line to the configuration file to tell *Hugo* to use it.
+```bash
+# Add submodule. Change URL and destination directory accordingly
 git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
-echo "theme = 'LoveIt'" >> config.toml
 
-# Add a .gitignore file to exclude unnecessary directories and files when building 
-cat > .gitignore << EOF
-/public/
-/resources/_gen/
-.hugo_build.lock
-EOF
+# Set the theme on Hugo's configuration.
+# On versions prior to Hugo 0.109.0, configuration file
+# is `config.toml`, change name accordingly
+echo "theme = 'LoveIt'" >> hugo.toml
+```
 
+## Starting Server
+To show the site on the browser, *Hugo* uses a *Live Server*, which will be watching changes made on your site's directory structure and files. If a change is made, it will be reflected on the browser. 
+```bash
 # Start webserver
-hugo server         # Web Server is available at http://localhost:1313
-hugo server -D      # Build drafts
-hugo server -p 1314 # Change default port
-{{< / highlight >}}
+hugo server
+```
+Now you can go to `http://localhost:1313` on the browser and see the default look of *LoveIt* theme.
+
+As the output of the *Live Server* says, you have to press `Ctrl+C` to stop it.
+
+You won't be able to use the current terminal tab until you stop the server. To run commands from now on, you'll have to open a new one. You can use the mouse, or, if you're a keyboard freak like me, you can use the keyboard.
+
+The *Shortcut* may change depending on you're platform. On *Gnome Terminal*, the one I'm using, and in most terminals on *Linux* is `Ctrl+Shift+T`.
 
 ## Convert TOML Configuration to YAML
 The default format for configuration in Hugo is *TOML*, which looks for example, like this:
@@ -92,7 +145,8 @@ After creating a new configuration, you're gonna have to restart server.
 Come back to the tab where it is running, press `Ctrl+C` to stop it, and then run `hugo server` to start it
 
 # Use Directory Structure for Configuration
-If the configuration is working correctly, 
+Configuration files tend to get messy when customization grows. You can divide 
+If the configuration is working correctly, you can delete old configuration file
 
 ## Why You Need Leaf Bundles
 Open a new tab on your terminal emulator
@@ -141,3 +195,13 @@ mv index.md index.en.md
 popd
 ```
 Read [Hugo Documentation](https://gohugo.io/content-management/multilingual/#configure-languages) for more info on multilanguage
+
+## Deploy to GitHub
+```bash
+# Add a .gitignore file to exclude unnecessary directories and files when building 
+cat > .gitignore << EOF
+/public/
+/resources/_gen/
+.hugo_build.lock
+EOF
+```
