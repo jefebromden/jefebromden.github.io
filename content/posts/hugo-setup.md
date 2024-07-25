@@ -78,8 +78,8 @@ To use the theme on your site, you have to run two commands
 git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 
 # Set the theme on Hugo's configuration.
-# On versions prior to Hugo 0.109.0, the configuration file were `config.toml`,
-# change the name accordingly.
+# On versions prior to Hugo 0.109.0, the configuration file
+# was `config.toml`, change the name accordingly.
 echo "theme = 'LoveIt'" >> hugo.toml
 ```
 > `>` is the *redirection operator* on Bash. It is used to dump content to a file. A single operator (`>`) creates a new file or overwrites it. A double operator (`>>`) add content.
