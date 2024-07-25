@@ -134,7 +134,7 @@ Which is more clearer. For a more detailed explanation on why *YAML* is a better
 
 To convert to *YAML*, on *Linux*, you can use [Yq](https://github.com/mikefarah/yq).
 
-Open a new tab on your terminal emulator:
+Open a new tab on your terminal:
 ```bash
 # Install (Fedora)
 dnf install yq
@@ -143,8 +143,9 @@ dnf install yq
 yq --version
 
 # Convert
-# Since Hugo 0.109.0, configuration changed from `config.toml` to `hugo.toml`
-# `-oy` option specifies output format (*YAML*)
+# Since Hugo 0.109.0, configuration changed from `config.toml` to `hugo.toml`.
+# If you're on a version prior to 0.109.0, use `config.toml` as file name
+# `-oy` option specifies output format (*YAML*).
 yq -oy config.toml > hugo.yml
 
 # Rename old configuration file so Hugo won't read it
@@ -156,7 +157,7 @@ sed -i '/^title/ s/My*.*Site/Cookbooks/' hugo.yml
 ```
 After creating a new configuration, you're gonna have to restart server.
 
-Come back to the tab where it is running, press `Ctrl+C` to stop it, and then run `hugo server` to start it
+Come back to the tab where it is running, press `Ctrl+C` to stop it, and then run `hugo server` to start it.
 
 ## Use Directory Structure for Configuration
 Configuration files tend to get messy when customization grows. You can divide 
