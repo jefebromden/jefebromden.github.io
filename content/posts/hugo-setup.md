@@ -78,13 +78,11 @@ To use the theme on your site, you have to run two commands
 git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 
 # Set the theme on Hugo's configuration.
-# On versions prior to Hugo 0.109.0, the configuration file
-# was `config.toml`, change the name accordingly.
-echo "theme = 'LoveIt'" >> hugo.toml
+# Since version 0.109.0, the configuration file
+# can be named `hugo.toml`, we will change it later
+echo "theme = 'LoveIt'" >> config.toml
 ```
 > `>` is the *redirection operator* on Bash. It is used to dump content to a file. A single operator (`>`) creates a new file or overwrites it. A double operator (`>>`) add content.
-
-> If you're on a version newer than 0.109.0, you can safetely use `hugo.toml`. But then you will have to rename `config.toml` to something like `_config.toml` so Hugo will ignore it
 
 ## Starting the Server
 To show the site on browser, Hugo uses a *Live Server*, which will be watching changes made on your site's directory structure and files. If a change is made, it will be reflected on the browser.
