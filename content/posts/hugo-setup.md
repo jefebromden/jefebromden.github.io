@@ -7,7 +7,7 @@ draft: false
 
 # How to Create a Basic Site With Hugo
 ## Creating a New Site
-To simplify this guide, I will use the command to install on my current platform, *Fedora Linux*. You can check the Web for the corresponding command on your platform. Hugo is multi-platform, so the rest of the commands should work.
+To simplify this guide, I will use the command to install on my current platform, *Fedora Linux*. You can check the Web for the corresponding command for you. Hugo is multi-platform, so the rest of the commands should work.
 ```bash
 # Install (Fedora)
 dnf install hugo
@@ -36,7 +36,7 @@ tree $_
 ```
 > On *Bash* shell, `$_` variable holds the last argument of the last command. In this case, *cookbooks*.
 
-## Choosing Theme
+## Choosing a Theme
 By default, Hugo comes with no *HTML* pages, not even a basic one. If you try to run the site now, you'll get a *Page Not Found* page.
 
 To render content, Hugo uses *Themes*, which contains the necessary HTML code, *CSS* style and other assets like *images* and *Javascript* to show your content.
@@ -47,7 +47,7 @@ There are plenty out there. The problem with most of them is that they use *Node
 
 To find a *minimalistic* theme, you can search the Web and try one by one (what I did), or you can you use GitHub Search with `NOT` operator: `hugo theme NOT node`. Try to sponsor the project you choose whenever you can.
 
-I choose [LoveIt](https://github.com/dillonzq/LoveIt) for various reasons:
+I choosed [LoveIt](https://github.com/dillonzq/LoveIt) for various reasons:
 - It focus on writing.
 - It has good documentation. You can check it out [here](https://www.hugoloveit.com)
 - Simple.
@@ -55,7 +55,7 @@ I choose [LoveIt](https://github.com/dillonzq/LoveIt) for various reasons:
 - Visually attractive.
 - It has support for multi-language.
 
-## Creating Git Repository
+## Creating a Git Repository
 With most themes, you have two ways to use them, with a *Hugo Module*, or a *Git Submodule*. To use it as a Hugo module you may have to eventually learn basic *Go* syntax. I don't want to unnecessary shift the focus from this guide.
 
 Since we'll be using *Git* to save the project on the cloud and deploy it, we'll use a submodule.
@@ -66,8 +66,8 @@ git init
 ```
 You don't have to know to use Git to make a site, you just need two commands to add the theme. You do need it to deploy it. Make sure you *bookmark* this page, I'll be adding a basic introduction to *Git Workflow* to run your own blog. 
 
-## Adding Theme
-Themes have to be placed under `themes` directory, in its own directory, and then be referenced on the configuration file.
+## Adding a Theme
+Themes have to be placed under `themes` directory, on its own directory, and then be referenced on the configuration file.
 
 To use the theme on your site, you have to run two commands
 - *git*: to add your theme as a submodule
@@ -78,12 +78,15 @@ To use the theme on your site, you have to run two commands
 git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 
 # Set the theme on Hugo's configuration.
-# On versions prior to Hugo 0.109.0, configuration file
-# is `config.toml`, change name accordingly
+# On versions prior to Hugo 0.109.0, the configuration file were `config.toml`,
+# change the name accordingly.
 echo "theme = 'LoveIt'" >> hugo.toml
 ```
+> `>` is the *redirection operator* on Bash. It is used to dump content to a file. A single operator (`>`) creates a new file or overwrites it. A double operator (`>>`) add content.
 
-## Starting Server
+> If you're on a version newer than 0.109.0, you can safetely use `hugo.toml`. But then you will have to rename `config.toml` to something like `_config.toml` so Hugo will ignore it
+
+## Starting the Server
 To show the site on browser, Hugo uses a *Live Server*, which will be watching changes made on your site's directory structure and files. If a change is made, it will be reflected on the browser.
 ```bash
 # Start webserver
@@ -91,13 +94,17 @@ hugo server
 ```
 Now you can go to `http://localhost:1313` on the browser and see the default look of *LoveIt* theme.
 
-As the output of the *Live Server* says, you have to press `Ctrl+C` to stop it.
+<!-- TODO: Add Web Browser screenshot -->
 
-<!-- TODO: Add Live Server screenshot -->
+As the output of the *Live Server* says, you have to press `Ctrl+C` to stop it.
+```bash
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+```
 
 You won't be able to use the current terminal tab until you stop the server. To run commands from now on, you'll have to open a new one. You can use the mouse, or, if you're a keyboard freak like me, you can use a *Shortcut*.
 
-This may change depending on you're platform. On *Gnome Terminal*, the one I'm using, and in most terminals on *Linux*, is `Ctrl+Shift+T`.
+This may change depending on your platform. On *Gnome Terminal*, the one I'm using, and in most terminals on *Linux*, is `Ctrl+Shift+T`.
 
 ## Convert TOML Configuration to YAML
 The default format for configuration in Hugo is *TOML*, which looks for example, like this:
@@ -214,3 +221,5 @@ cat > .gitignore << EOF
 .hugo_build.lock
 EOF
 ```
+ ls
+ 
