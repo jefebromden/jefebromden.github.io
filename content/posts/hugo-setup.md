@@ -99,10 +99,7 @@ As the output of the *Live Server* says, you have to press `Ctrl+C` to stop it.
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
-
-You won't be able to use the current terminal tab until you stop the server. To run commands from now on, you'll have to open a new one. You can use the mouse, or, if you're a keyboard freak like me, you can use a *Shortcut*.
-
-This may change depending on your platform. On *Gnome Terminal*, the one I'm using, and in most terminals on *Linux*, is `Ctrl+Shift+T`.
+We don't need the server now, so stop it. Now we have to rename and move the configuration file.
 
 ## Convert TOML Configuration to YAML
 The default format for configuration in Hugo is *TOML*, which looks for example, like this:
@@ -155,9 +152,10 @@ mv config.toml _config.toml
 # This is gonna set browser's tab title
 sed -i '/^title/ s/My*.*Site/Cookbooks/' hugo.yml
 ```
-After creating a new configuration, you're gonna have to restart server.
 
-Come back to the tab where it is running, press `Ctrl+C` to stop it, and then run `hugo server` to start it.
+You won't be able to use the current terminal tab until you stop the server. To run commands from now on, you'll have to open a new one. You can use the mouse, or, if you're a keyboard freak like me, you can use a *Shortcut*.
+
+This may change depending on your platform. On *Gnome Terminal*, the one I'm using, and in most terminals on *Linux*, is `Ctrl+Shift+T`.
 
 ## Use Directory Structure for Configuration
 Configuration files tend to get messy when customization grows. You can divide 
