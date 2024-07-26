@@ -101,7 +101,7 @@ Press Ctrl+C to stop
 ```
 We don't need the server now, so stop it. Now we have to rename and move the configuration file.
 
-## Convert TOML Configuration to YAML
+## Convert TOML Configuration to Yaml
 The default format for configuration in Hugo is *TOML*, which looks for example, like this:
 ```toml
 baseURL = 'http://example.org/'
@@ -115,7 +115,7 @@ theme = 'LoveIt'
       wrapStandAloneImageWithinParagraph = false
 ```
 
-The same configuration in *YAML*, on the other hand, looks like this:
+The same configuration in *Yaml*, on the other hand, looks like this:
 ```yaml
 baseURL: http://example.org/
 languageCode: en-us
@@ -127,29 +127,52 @@ markup:
     parser:
       wrapStandAloneImageWithinParagraph: false
 ```
-Which is more clearer. For a more detailed explanation on why *YAML* is a better format, [read this article](https://www.brycewray.com/posts/2023/05/organizing-hugo-configuration/)
+Which is more compact and clearer. For a more detailed explanation on why *Yaml* is a better format, [read this article](https://www.brycewray.com/posts/2023/05/organizing-hugo-configuration/)
 
-To convert to *YAML*, on *Linux*, you can use [Yq](https://github.com/mikefarah/yq).
-
-Open a new tab on your terminal:
+To convert to *Yaml*, on *Linux*, you can use [Yq](https://github.com/mikefarah/yq). Run the following commands to install it:
 ```bash
 # Install (Fedora)
 dnf install yq
 
 # Check version
 yq --version
+```
 
-# Convert
-# Since Hugo 0.109.0, configuration changed from `config.toml` to `hugo.toml`.
-# If you're on a version prior to 0.109.0, use `config.toml` as file name
-# `-oy` option specifies output format (*YAML*).
+Since Hugo 0.109.0, configuration file name changed from `config.toml` to `hugo.toml`. If you're on a version prior to 0.109.0, use `config.toml` as file name on the rest of commands instead of `hugo.toml`.
+
+`yq` doesn't have an option to list the available formats for convertion. Run the following command to list them:
+```bash
+yq --help | grep format
+```
+
+The important options are:
+- *-p*: specifies the input format. *--input-format fmt_string* can be used also.
+- *-o*: specifies the output format. *--output-format fmt_string* can be used also.
+
+The input/output format passed to both options, can be a single letter (*y*) or the format name (*yaml*).
+
+`yq` can detect the input based on the file extension, so you can skip that option.
+
+The help says that you can skip the output format too, and that it defaults to *Yaml*, but if you try, you get an error:
+```bash
+Error: only scalars (e.g. strings, numbers, booleans) are supported for TOML output at the moment. Please use yaml output format (-oy) until the encoder has been fully implemented
+```
+
+That feature is not available yet, so you gonna have to use the output format option.
+
+Run the following command to convert to *Yaml*
+```bash
 yq -oy config.toml > hugo.yml
+```
 
-# Rename old configuration file so Hugo won't read it
+Now that we have the new configuration file, rename old one so Hugo won't read it.
+```bash
 mv config.toml _config.toml
+```
 
-# Make a small change for testing purposes
+Make a small change for testing purposes
 # This is gonna set browser's tab title
+```bash
 sed -i '/^title/ s/My*.*Site/Cookbooks/' hugo.yml
 ```
 
