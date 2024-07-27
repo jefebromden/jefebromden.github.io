@@ -6,6 +6,27 @@ draft: false
 ---
 
 # How to Create a Basic Site With Hugo
+## Themes: Choosing How Your Site Will Look
+By default, Hugo comes with no *HTML* pages, not even a basic one. If you try to run the site now, you'll get a *Page Not Found* page.
+
+To render content, Hugo uses *Themes*, which contains the necessary HTML code, *CSS* style and other assets like *images* and *Javascript* to show your content.
+
+You have two ways to add a theme. You can write your own from scratch, or you can use one that somebody else write for you. To simplify this guide, we'll be using an already made theme.
+
+There are plenty out there. The problem with most of them is that they use *Node*. I  don't have any problems with Node, but when you're trying to host a simple *Static Site*, it feels really bloated.
+
+To find a *minimalistic* theme, you can search the Web and try one by one (what I did), or you can you use GitHub Search with `NOT` operator: `hugo theme NOT node`. Try to sponsor the project you choose whenever you can.
+
+I choosed [LoveIt](https://github.com/dillonzq/LoveIt) for various reasons:
+- It focus on writing.
+- It has good documentation. You can check it out [here](https://www.hugoloveit.com)
+- Simple.
+- Easy to use.
+- Visually attractive.
+- It has support for multi-language.
+
+Take not of the repository *URL*, we will need it later.
+
 ## Creating a New Site
 To simplify this guide, I will use the command to install on my current platform, *Fedora Linux*. You can check the Web for the corresponding command for you. *Hugo* is multi-platform, so the rest of the commands should work.
 ```bash
@@ -35,25 +56,6 @@ tree $_
 └── themes
 ```
 > On *Bash* shell, `$_` variable holds the last argument of the last command. In this case, *cookbooks*.
-
-## Choosing a Theme
-By default, Hugo comes with no *HTML* pages, not even a basic one. If you try to run the site now, you'll get a *Page Not Found* page.
-
-To render content, Hugo uses *Themes*, which contains the necessary HTML code, *CSS* style and other assets like *images* and *Javascript* to show your content.
-
-You have two ways to add a theme. You can write your own from scratch, or you can use one that somebody else write for you. To simplify this guide, we'll be using an already made theme.
-
-There are plenty out there. The problem with most of them is that they use *Node*. I  don't have any problems with Node, but when you're trying to host a simple *Static Site*, it feels really bloated.
-
-To find a *minimalistic* theme, you can search the Web and try one by one (what I did), or you can you use GitHub Search with `NOT` operator: `hugo theme NOT node`. Try to sponsor the project you choose whenever you can.
-
-I choosed [LoveIt](https://github.com/dillonzq/LoveIt) for various reasons:
-- It focus on writing.
-- It has good documentation. You can check it out [here](https://www.hugoloveit.com)
-- Simple.
-- Easy to use.
-- Visually attractive.
-- It has support for multi-language.
 
 ## Creating a Git Repository
 With most themes, you have two ways to use them, with a *Hugo Module*, or a *Git Submodule*. To use it as a Hugo module you may have to eventually learn basic *Go* syntax. I don't want to unnecessary shift the focus from this guide.
