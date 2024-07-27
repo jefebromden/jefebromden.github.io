@@ -7,7 +7,7 @@ draft: false
 
 # How to Create a Basic Site With Hugo
 ## Creating a New Site
-To simplify this guide, I will use the command to install on my current platform, *Fedora Linux*. You can check the Web for the corresponding command for you. Hugo is multi-platform, so the rest of the commands should work.
+To simplify this guide, I will use the command to install on my current platform, *Fedora Linux*. You can check the Web for the corresponding command for you. *Hugo* is multi-platform, so the rest of the commands should work.
 ```bash
 # Install (Fedora)
 dnf install hugo
@@ -65,6 +65,26 @@ cd $_
 git init
 ```
 You don't have to know to use Git to make a site, you just need two commands to add the theme. You do need it to deploy it. Make sure you *bookmark* this page, I'll be adding a basic introduction to *Git Workflow* to run your own blog. 
+
+## Cat: Giving a Quick Look to the Configuration File
+When you are on the terminal, sometimes you need to take a look at the content of a file. You can, of course, use a *Terminal Editor*, like *Nano*, or a *UI Text Editor*.
+
+The truth is, *Context Switching* is not good to focus our attention, because, we humans, [are not good at Multitasking](https://www.youtu.be/iM4u-7Z5URk). It's better to separate tasks we can do on a terminal, from those we should be doing on a *UI*.
+
+On Linux, we have a tool for that, the `Cat` command. To show the content of Hugo's configuration, run the following command:
+```bash
+cat config.toml
+```
+This is what you will see:
+```toml
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+```
+The basic configuration consists of four keys and their respective values, separated by an equal sign:
+- *baseURL*: *URL* in which your site will be shown.
+- *LanguageCode: [RSS Language Code](https://www.rssboard.org/rss-language-codes) used as default language for your site.
+- *title*: It sets the browser's tab title of the site.
 
 ## Adding a Theme
 Themes have to be placed under `themes` directory, on its own directory, and then be referenced on the configuration file.
@@ -171,7 +191,7 @@ mv config.toml _config.toml
 ```
 
 ## Sed: Making small changes to the configuration
-The following task can be easily be accomplished with any *UI Text Editor*. However, it will be convenient if we can make atomic changes to the configuration, that means, to some parameter values, without the need to manually edit the file.
+The following task can be easily be accomplished with any UI Text Editor. However, it will be convenient if we can make atomic changes to the configuration, that means, to some parameter values, without the need to manually edit the file.
 
 All this setup and configuration can be easily be made via a script, so if we need to make more than one site, but with different looks or value names, we just run the script giving those values.
 
