@@ -7,7 +7,7 @@ draft: false
 
 # How to Create a Basic Site With Hugo
 ## Themes: Choosing How Your Site Will Look
-By default, Hugo comes with no *HTML* pages, not even a basic one. If you try to run the site now, you'll get a *Page Not Found* page.
+By default, Hugo comes with no *HTML* pages, not even a basic one. If you try to run the site using defaults, you'll get a *Page Not Found* page.
 
 To render content, Hugo uses *Themes*, which contains the necessary HTML code, *CSS* style and other assets like *images* and *Javascript* to show your content.
 
@@ -16,6 +16,8 @@ You have two ways to add a theme. You can write your own from scratch, or you ca
 There are plenty out there. The problem with most of them is that they use *Node*. I  don't have any problems with Node, but when you're trying to host a simple *Static Site*, it feels really bloated.
 
 To find a *minimalistic* theme, you can search the Web and try one by one (what I did), or you can you use GitHub Search with `NOT` operator: `hugo theme NOT node`. Try to sponsor the project you choose whenever you can.
+
+<!-- TODO: Add a more detailed explanation on how to use GH Search -->
 
 I choosed [LoveIt](https://github.com/dillonzq/LoveIt) for various reasons:
 - It focus on writing.
