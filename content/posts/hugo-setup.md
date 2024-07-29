@@ -169,7 +169,6 @@ With most themes, you have two ways to use them, with a *Hugo Module*, or a *Git
 Since we'll be using *Git* to save the project on the cloud and deploy it, we'll use a submodule.
 ```bash
 # Create repository
-cd $_
 git init
 ```
 You don't have to know to use Git to make a site, you just need two commands to add the theme. You do need it to deploy it. Make sure you *bookmark* this page, I'll be adding a basic introduction to *Git Workflow* to run your own blog. 
