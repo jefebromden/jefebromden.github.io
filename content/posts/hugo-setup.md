@@ -208,7 +208,9 @@ As you see, you can go to `http://localhost:1313` on the browser and see the def
 
 <!-- TODO: Add Web Browser screenshot -->
 
-We don't need the server now, so stop it. Now we have to rename and move the configuration file.
+You won't be able to use the current terminal tab until you stop the server. To run commands from now on, you'll have to open a new one. You can use the mouse, or, if you're a keyboard freak like me, you can use a *Shortcut*.
+
+This may change depending on your platform. On *Gnome Terminal*, the one I'm using, and in most terminals on *Linux*, is `Ctrl+Shift+T`.
 
 ## Sed: Making small changes to the configuration
 The following task can be easily be accomplished with any UI Text Editor. However, it will be convenient if we can make atomic changes to the configuration, that means, to some parameter values, without the need to manually edit the file.
@@ -236,10 +238,6 @@ The *title* key is gonna set the browser's tab title of the site. I don't want t
 ## Use Directory Structure for Configuration
 Configuration files tend to get messy when customization grows. You can divide 
 If the configuration is working correctly, you can delete old configuration file
-
-You won't be able to use the current terminal tab until you stop the server. To run commands from now on, you'll have to open a new one. You can use the mouse, or, if you're a keyboard freak like me, you can use a *Shortcut*.
-
-This may change depending on your platform. On *Gnome Terminal*, the one I'm using, and in most terminals on *Linux*, is `Ctrl+Shift+T`.
 
 ## Why You Need Leaf Bundles
 Open a new tab on your terminal emulator
