@@ -93,7 +93,6 @@ The default format for configuration in Hugo is *TOML*, which looks for example,
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
-theme = 'LoveIt'
 
 [markup]
   [markup.goldmark]
@@ -106,7 +105,6 @@ The same configuration in *Yaml*, on the other hand, looks like this:
 baseURL: http://example.org/
 languageCode: en-us
 title: My New Hugo Site
-theme: LoveIt
 
 markup:
   goldmark:
@@ -126,10 +124,12 @@ yq --version
 
 Since Hugo 0.109.0, configuration file name changed from `config.toml` to `hugo.toml`. If you're on a version prior to 0.109.0, use `config.toml` as file name on the rest of commands instead of `hugo.toml`.
 
-`yq` doesn't have an option to list the available formats for convertion. Run the following command to list them:
+`yq` doesn't have an option to list the available formats for conversion. Run the following command to list them:
 ```bash
 yq --help | grep format
 ```
+
+<!-- TODO: Add detailed explanation of Grep command -->
 
 The important options are:
 - *-p*: specifies the input format. *--input-format fmt_string* can be used also.
@@ -151,9 +151,16 @@ Run the following command to convert to *Yaml*
 yq -oy config.toml > hugo.yml
 ```
 
-Now that we have the new configuration file, rename old one so Hugo won't read it.
+Check the new file was created correctly by running `cat hugo.yml`. It should look like this:
+```yaml
+baseURL: http://example.org/
+languageCode: en-us
+title: My New Hugo Site
+```
+
+Now that we have the new configuration file, you can delete the old one.
 ```bash
-mv config.toml _config.toml
+rm config.toml
 ```
 
 ## Creating a Git Repository
