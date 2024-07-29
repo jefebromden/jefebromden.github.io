@@ -85,51 +85,7 @@ The basic configuration consists of three keys and their respective values, sepa
 - *LanguageCode: [RSS Language Code](https://www.rssboard.org/rss-language-codes) used as default language for your site.
 - *title*: It sets the browser's tab title of the site.
 
-## Creating a Git Repository
-With most themes, you have two ways to use them, with a *Hugo Module*, or a *Git Submodule*. To use it as a Hugo module you may have to eventually learn basic *Go* syntax. I don't want to unnecessary shift the focus from this guide.
-
-Since we'll be using *Git* to save the project on the cloud and deploy it, we'll use a submodule.
-```bash
-# Create repository
-cd $_
-git init
-```
-You don't have to know to use Git to make a site, you just need two commands to add the theme. You do need it to deploy it. Make sure you *bookmark* this page, I'll be adding a basic introduction to *Git Workflow* to run your own blog. 
-
-## Adding a Theme
-Themes have to be placed under `themes` directory, on its own directory, and then be referenced on the configuration file.
-
-To use the theme on your site, you have to run two commands
-- *git*: to add your theme as a submodule
-- *echo*: to add a single line to the configuration file
-```bash
-# Add submodule. Change URL and destination directory accordingly to your theme
-# The format is simple: `git submodule add repository_url theme_directory`
-git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
-
-# Set the theme on Hugo's configuration.
-# Since version 0.109.0, the configuration file
-# can be named `hugo.toml`, we will change it later
-echo "theme = 'LoveIt'" >> config.toml
-```
-> `>` is the *redirection operator* on Bash. It is used to dump content to a file. A single operator (`>`) creates a new file or overwrites it. A double operator (`>>`) add content.
-
-## Starting the Server
-To show the site on browser, Hugo uses a *Live Server*, which will be watching changes made on your site's directory structure and files. If a change is made, it will be reflected on the browser.
-```bash
-# Start webserver
-hugo server
-```
-Now you can go to `http://localhost:1313` on the browser and see the default look of *LoveIt* theme.
-
-<!-- TODO: Add Web Browser screenshot -->
-
-As the output of the *Live Server* says, you have to press `Ctrl+C` to stop it.
-```bash
-Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
-Press Ctrl+C to stop
-```
-We don't need the server now, so stop it. Now we have to rename and move the configuration file.
+Of course, ass configuration file gets bigger, `cat` command isn't the better choice, but that's something we'll cover on other section
 
 ## Convert TOML Configuration to Yaml
 The default format for configuration in Hugo is *TOML*, which looks for example, like this:
@@ -199,6 +155,52 @@ Now that we have the new configuration file, rename old one so Hugo won't read i
 ```bash
 mv config.toml _config.toml
 ```
+
+## Creating a Git Repository
+With most themes, you have two ways to use them, with a *Hugo Module*, or a *Git Submodule*. To use it as a Hugo module you may have to eventually learn basic *Go* syntax. I don't want to unnecessary shift the focus from this guide.
+
+Since we'll be using *Git* to save the project on the cloud and deploy it, we'll use a submodule.
+```bash
+# Create repository
+cd $_
+git init
+```
+You don't have to know to use Git to make a site, you just need two commands to add the theme. You do need it to deploy it. Make sure you *bookmark* this page, I'll be adding a basic introduction to *Git Workflow* to run your own blog. 
+
+## Adding a Theme
+Themes have to be placed under `themes` directory, on its own directory, and then be referenced on the configuration file.
+
+To use the theme on your site, you have to run two commands
+- *git*: to add your theme as a submodule
+- *echo*: to add a single line to the configuration file
+```bash
+# Add submodule. Change URL and destination directory accordingly to your theme
+# The format is simple: `git submodule add repository_url theme_directory`
+git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
+
+# Set the theme on Hugo's configuration.
+# Since version 0.109.0, the configuration file
+# can be named `hugo.toml`, we will change it later
+echo "theme = 'LoveIt'" >> config.toml
+```
+> `>` is the *redirection operator* on Bash. It is used to dump content to a file. A single operator (`>`) creates a new file or overwrites it. A double operator (`>>`) add content.
+
+## Starting the Server
+To show the site on browser, Hugo uses a *Live Server*, which will be watching changes made on your site's directory structure and files. If a change is made, it will be reflected on the browser.
+```bash
+# Start webserver
+hugo server
+```
+Now you can go to `http://localhost:1313` on the browser and see the default look of *LoveIt* theme.
+
+<!-- TODO: Add Web Browser screenshot -->
+
+As the output of the *Live Server* says, you have to press `Ctrl+C` to stop it.
+```bash
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+```
+We don't need the server now, so stop it. Now we have to rename and move the configuration file.
 
 ## Sed: Making small changes to the configuration
 The following task can be easily be accomplished with any UI Text Editor. However, it will be convenient if we can make atomic changes to the configuration, that means, to some parameter values, without the need to manually edit the file.
