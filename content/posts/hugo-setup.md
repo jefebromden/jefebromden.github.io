@@ -187,7 +187,7 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 # Set the theme on Hugo's configuration.
 # Since version 0.109.0, the configuration file
 # can be named `hugo.toml`, we will change it later
-echo "theme = 'LoveIt'" >> config.toml
+echo "theme: LoveIt" >> hugo.yml
 ```
 > `>` is the *redirection operator* on Bash. It is used to dump content to a file. A single operator (`>`) creates a new file or overwrites it. A double operator (`>>`) add content.
 
