@@ -43,16 +43,20 @@ hugo version
 ```bash
 # Create new site
 hugo new site cookbooks
-```
 
-This will create the basic directory structure of the site. On *Linux*, you can check it out with the `tree` command:
+# Enter site directory
+cd $_
+```
+> On *Bash* shell, `$_` variable holds the last argument of the last command. In this case, *cookbooks*.
+
+The `new site` command will create the basic directory structure of the site. On *Linux*, you can check it out with the `tree` command:
 ```bash
-tree $_
+tree
 .
 ├── archetypes
 │   └── default.md
 ├── assets
-├── hugo.toml
+├── config.toml
 ├── content
 ├── data
 ├── layouts
@@ -60,7 +64,6 @@ tree $_
 ├── static
 └── themes
 ```
-> On *Bash* shell, `$_` variable holds the last argument of the last command. In this case, *cookbooks*.
 
 ## Creating a Git Repository
 With most themes, you have two ways to use them, with a *Hugo Module*, or a *Git Submodule*. To use it as a Hugo module you may have to eventually learn basic *Go* syntax. I don't want to unnecessary shift the focus from this guide.
