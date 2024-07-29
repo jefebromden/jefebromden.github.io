@@ -65,17 +65,6 @@ tree
 └── themes
 ```
 
-## Creating a Git Repository
-With most themes, you have two ways to use them, with a *Hugo Module*, or a *Git Submodule*. To use it as a Hugo module you may have to eventually learn basic *Go* syntax. I don't want to unnecessary shift the focus from this guide.
-
-Since we'll be using *Git* to save the project on the cloud and deploy it, we'll use a submodule.
-```bash
-# Create repository
-cd $_
-git init
-```
-You don't have to know to use Git to make a site, you just need two commands to add the theme. You do need it to deploy it. Make sure you *bookmark* this page, I'll be adding a basic introduction to *Git Workflow* to run your own blog. 
-
 ## Cat: Giving a Quick Look to the Configuration File
 When you are on the terminal, sometimes you need to take a look at the content of a file. You can, of course, use a *Terminal Editor*, like *Nano*, or a *UI Text Editor*.
 
@@ -91,10 +80,21 @@ baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 ```
-The basic configuration consists of four keys and their respective values, separated by an equal sign:
+The basic configuration consists of three keys and their respective values, separated by an equal sign:
 - *baseURL*: *URL* in which your site will be shown.
 - *LanguageCode: [RSS Language Code](https://www.rssboard.org/rss-language-codes) used as default language for your site.
 - *title*: It sets the browser's tab title of the site.
+
+## Creating a Git Repository
+With most themes, you have two ways to use them, with a *Hugo Module*, or a *Git Submodule*. To use it as a Hugo module you may have to eventually learn basic *Go* syntax. I don't want to unnecessary shift the focus from this guide.
+
+Since we'll be using *Git* to save the project on the cloud and deploy it, we'll use a submodule.
+```bash
+# Create repository
+cd $_
+git init
+```
+You don't have to know to use Git to make a site, you just need two commands to add the theme. You do need it to deploy it. Make sure you *bookmark* this page, I'll be adding a basic introduction to *Git Workflow* to run your own blog. 
 
 ## Adding a Theme
 Themes have to be placed under `themes` directory, on its own directory, and then be referenced on the configuration file.
