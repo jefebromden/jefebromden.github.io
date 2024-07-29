@@ -25,9 +25,9 @@ I choosed [LoveIt](https://github.com/dillonzq/LoveIt) for various reasons:
 - Visually attractive.
 - It has support for multi-language.
 
-Take not of the repository *URL*, we will need it later.
+Take note of the repository *URL*, we will need it later.
 
-## Creating a New Site
+## Installing Hugo
 To simplify this guide, I will use the command to install on my current platform, *Fedora Linux*. You can check the Web for the corresponding command for you. *Hugo* is multi-platform, so the rest of the commands should work.
 ```bash
 # Install (Fedora)
@@ -35,7 +35,10 @@ dnf install hugo
 
 # Check version
 hugo version
+```
 
+## Creating a New Site
+```bash
 # Create new site
 hugo new site cookbooks
 ```
