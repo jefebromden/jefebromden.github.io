@@ -197,15 +197,17 @@ To show the site on browser, Hugo uses a *Live Server*, which will be watching c
 # Start webserver
 hugo server
 ```
-Now you can go to `http://localhost:1313` on the browser and see the default look of *LoveIt* theme.
 
-<!-- TODO: Add Web Browser screenshot -->
-
-As the output of the *Live Server* says, you have to press `Ctrl+C` to stop it.
+You will see the output of the *Live Server*:
 ```bash
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
+
+As you see, you can go to `http://localhost:1313` on the browser and see the default look of *LoveIt* theme.
+
+<!-- TODO: Add Web Browser screenshot -->
+
 We don't need the server now, so stop it. Now we have to rename and move the configuration file.
 
 ## Sed: Making small changes to the configuration
