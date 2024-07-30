@@ -212,6 +212,36 @@ You won't be able to use the current terminal tab until you stop the server. To 
 
 This may change depending on your platform. On *Gnome Terminal*, the one I'm using, and in most terminals on *Linux*, is `Ctrl+Shift+T`.
 
+## Adding a New Post
+There is a lot of workflows you can use with Hugo, and each *theme developer* uses the appropriate for their goals.
+
+As I said on the first section, I choose LoveIt because it focus on writing. That means that, once you got Hugo setup, you can create a new article and immediately see it on your site. Use `new` command to create a new *post*:
+```bash
+hugo new posts/hugo.md
+```
+A common struggle on newcomers to Hugo is dealing with Hugo's web server. You won't see this new post on your site, but that is because all new posts are *drafts* by default. That means that they won't be rendered on site, unless you tell it otherwise.
+
+To tell web server to render drafts, you have to use `-D` option. Come back to tab where web server is running, press `Ctrl+C` to stop it, and start it again with that option:
+```bash
+hugo server -D
+```
+Now, refresh your site on web browser, and you'll see the new post.
+<!-- TODO: Add Web Browser screenshoot with new post -->
+
+You just created a new entry on your *blog*. You can edit it on text editor of your choice. To list available drafts, use *list* command:
+```bash
+hugo list drafts
+```
+As you see on last command output, by default, all new content are created under `content` directory. `post` slag on post file name (`post/hugo.md`) is called *Content Type*. Is a way to organized your content, and is default content type in hugo when listing entries on a *List Page*.
+
+List Page is a page listing items. First page you see when you open your site is *Home Page*, and is a List Page as default, but you can convert it to Single Page.
+
+Single Page is used to show content, like post you just created. You can click on that post to see how your post is rendered as a Single Page
+
+You can see a preview of available posts on Home Page. You have a title, publish date, and when you add more content, you'll see the first part of text as *Summary*.
+
+You may notice *Author* item. You can set that field and customize summary by editing *Front Matter* on next section.
+
 ## Use Directory Structure for Configuration
 Configuration files tend to get messy when customization grows. You can divide 
 If the configuration is working correctly, you can delete old configuration file
