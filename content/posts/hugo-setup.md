@@ -238,7 +238,7 @@ As you see on last command output, by default, all new content are created under
 
 List Page is a page listing items, like posts you created.
 
-Single Page is used to show content, also like posts you just created. You can click on that post to see how your post is rendered as a Single Page.
+Single Page is used to show content, the like post you just created. You can click on that post to see how your post is rendered as a Single Page.
 
 Previews of available posts are listed on Home Page. You have a title, publish date, and when you add more content, you'll see first part of text as *Summary*.
 
