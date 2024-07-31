@@ -244,6 +244,25 @@ Previews of available posts are listed on Home Page. You have a title, publish d
 
 You may notice *Author* item. You can set that field and customize summary by editing *Front Matter* on next section.
 
+## What is Front Matter
+Front Matter are properties of documents (*metadata*). You can check defaults fields for your version of Hugo by taking a look at the document you just created. Run the following command:
+```bash
+cat content/posts/hugo.md
+```
+
+You'll see the content of your document:
+```yaml
+---
+title: "Hugo"
+date: 2024-07-31T07:31:31-03:00
+draft: true
+---
+```
+
+If the output format is different than what you see above, we will cover that on the next section.
+
+Depending on your version of Hugo, you may see different fields. On older ones, there was an *author* field, which we will add shortly. *Title* field is self explanatory. I will explain *date* and *draft* on separate sections.
+
 ## Use Directory Structure for Configuration
 Configuration files tend to get messy when customization grows. You can divide 
 If the configuration is working correctly, you can delete old configuration file
