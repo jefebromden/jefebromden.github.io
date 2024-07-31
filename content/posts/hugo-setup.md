@@ -280,7 +280,7 @@ That will convert all documents on `content` directory of your site. To cover al
 hugo convert toYAML --unsafe archetypes/
 ```
 
-`archetypes` directory contains *templates* for your documents (in *markdown*). We will cover that on other section.
+`archetypes` directory contains *templates* for your (*markdown*) documents. We will cover that on another section.
 
 ## Use Directory Structure for Configuration
 Configuration files tend to get messy when customization grows. You can divide 
