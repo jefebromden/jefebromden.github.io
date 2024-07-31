@@ -263,6 +263,25 @@ If the output format is different than what you see above, we will cover that on
 
 Depending on your version of Hugo, you may see different fields. On older ones, there was an *author* field, which we will add shortly. *Title* field is self explanatory. I will explain *date* and *draft* on separate sections.
 
+## Front Matter Format
+In newer versions of Hugo, default front matter format has changed from Yaml to Toml, which is fine, because now is consistent with default configuration file (Toml).
+
+But, as we discuss on a previous section, Yaml is more compact, clearer and easier to write, especially for newcomers. So, in case your front matter is using Toml, you can use `convert` command to convert all your documents at once.
+
+I will assume you didn't create important documents. In that case, you will have to make a backup, but that will not be covered here.
+
+To do the conversion, run the following command:
+```bash
+hugo convert toYAML --unsafe content/
+```
+
+That will convert all documents on `content` directory of your site. To cover all bases, do a conversion on `archetypes` directory too: 
+```bash
+hugo convert toYAML --unsafe archetypes/
+```
+
+`archetypes` directory contains *templates* for your documents (in *markdown*). We will cover that on other section.
+
 ## Use Directory Structure for Configuration
 Configuration files tend to get messy when customization grows. You can divide 
 If the configuration is working correctly, you can delete old configuration file
