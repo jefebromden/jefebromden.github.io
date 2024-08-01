@@ -321,10 +321,6 @@ In Australia, using the same method, it is 08:00 in the morning.
 
 The *offset* range from *UTC-12:00* to *UTC+14:00*. To get offset for a particular country, you can take a look at the [List UTC Offsets](https://en.wikipedia.org/wiki/Time_zone#List_of_UTC_offsets) on Wikipedia.
 
-## Use Directory Structure for Configuration
-Configuration files tend to get messy when customization grows. You can divide 
-If the configuration is working correctly, you can delete old configuration file
-
 ## Why You Need Leaf Bundles
 Open a new tab on your terminal emulator
 ```bash
@@ -372,6 +368,10 @@ mv index.md index.en.md
 popd
 ```
 Read [Hugo Documentation](https://gohugo.io/content-management/multilingual/#configure-languages) for more info on multilanguage
+
+## Use Directory Structure for Configuration
+Configuration files tend to get messy when customization grows. You can divide 
+If the configuration is working correctly, you can delete old configuration file
 
 ## Deploy to GitHub
 ```bash
