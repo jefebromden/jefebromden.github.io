@@ -282,6 +282,45 @@ hugo convert toYAML --unsafe archetypes/
 
 `archetypes` directory contains *templates* for your (*markdown*) documents. We will cover that on another section.
 
+## Resuming Front Matter Fields: Date
+Let's take a look again to front matter format on a new markdown document:
+```bash {hl_Lines="4"}
+cat content/posts/hugo.md
+---
+title: "Hugo"
+date: 2024-08-01T09:23:31-03:00
+draft: true
+---
+```
+
+If you read the highlighted line, and you're not in *Tech* or *Software Development*, you may recognize a date and a time, but you'd find it a little strange.
+
+This is called *ISO 8601* format, and it is an international standard for date and time. [From Wikipedia](https://en.wikipedia.org/wiki/ISO_8601):
+
+> The standard provides a well-defined, unambiguous method of representing calendar dates and times in worldwide communications, especially to avoid misinterpreting numeric dates and times when such data is transferred between countries with different conventions for writing numeric dates and times. 
+
+That means that, when we refer to a specific date and time, we use the same way to represent it. This is done by separating the date portion from the time-of-day with a *T*. This format has three parts:
+- *Date*: Using YYYY-MM-DD (Year, Month, Day) format.
+- *Time*: It comes after *T*, in HH:MM:SS (Hours, Minutes, Seconds) format.
+- *Time Zone*: It uses *UTC* to represent what region of the world you're in.
+
+UTC stands for Coordinated Universal Time. In case you're wondering why it is called UTC and not CUT [read this article](https://www.timeanddate.com/time/utc-abbreviation.html)
+
+UTC uses [Greenwich Mean Time](https://en.wikipedia.org/wiki/Greenwich_Mean_Time) (GMT) time zone as a reference, or central zone, to represent a region in the world.
+
+GMT time zone is the region above and below The Royal Observatory in Greenwich, London, when you spot it on a world map.
+
+The difference in time between a place on GMT (for example, London) and the region represented is called *Offset*. For example:
+- GMT time zone is represented *+00:00* or a *Z* letter (Zero hour offset), also called *Zulu Time*.
+- New York time zone is *-05:00*. That means you have to subtract 5 hours to GMT.
+- Australia time zone is *+8:00*. That means you have to add 8 hours to GMT.
+
+If it is midnight (00:00) in London and you want to know what time it is in New York, subtracting 5 hours tells you that it is 19:00 there.
+
+In Australia, using the same method, it is 08:00 in the morning.
+
+The *offset* range from *UTC-12:00* to *UTC+14:00*. To get offset for a particular country, you can take a look at the [List UTC Offsets](https://en.wikipedia.org/wiki/Time_zone#List_of_UTC_offsets) on Wikipedia.
+
 ## Use Directory Structure for Configuration
 Configuration files tend to get messy when customization grows. You can divide 
 If the configuration is working correctly, you can delete old configuration file
