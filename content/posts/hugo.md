@@ -312,14 +312,14 @@ GMT time zone is the region above and below The Royal Observatory in Greenwich, 
 
 The difference in time between a place on GMT (for example, London) and the region represented is called *Offset*. For example:
 - GMT time zone is represented *+00:00* or a *Z* letter (Zero hour offset), also called *Zulu Time*.
-- New York time zone is *-05:00*. That means you have to subtract 5 hours to GMT.
-- Australia time zone is *+8:00*. That means you have to add 8 hours to GMT.
+- New York time zone is *-05:00*. That means you have to *subtract* 5 hours to GMT.
+- Australia time zone is *+8:00*. In this case you have to *add* 8 hours to GMT.
 
 If it is midnight (00:00) in London and you want to know what time it is in New York, subtracting 5 hours tells you that it is 19:00 there.
 
 In Australia, using the same method, it is 08:00 in the morning.
 
-The *offset* range from *UTC-12:00* to *UTC+14:00*. To get offset for a particular country, you can take a look at the [List UTC Offsets](https://en.wikipedia.org/wiki/Time_zone#List_of_UTC_offsets) on Wikipedia.
+The *offset* range from *UTC-12:00* to *UTC+14:00*. To get offset for a particular country, you can take a look at the [List of UTC Offsets](https://en.wikipedia.org/wiki/Time_zone#List_of_UTC_offsets) on Wikipedia.
 
 ## Why You Need Leaf Bundles
 Open a new tab on your terminal emulator
