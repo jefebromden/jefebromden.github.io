@@ -226,13 +226,20 @@ To tell web server to render drafts, you have to use `-D` option. Come back to t
 hugo server -D
 ```
 Now, refresh your site on web browser, and you'll see the new post.
-<!-- TODO: Add Web Browser screenshoot with new post -->
+<!-- TODO: Add Web Browser screenshot with new post -->
 
-You just created a new entry on your *blog*. You can edit it on text editor of your choice. To list available drafts, use *list* command:
+You just created a new entry on your *blog*. Now we will explain how to list new entries.
+
+## Content Type: Using Content Directory Structure to Organize Your Documents
+By default, all new content is created under `content` directory. After adding a new post, you can check it out with `tree` command:
 ```bash
-hugo list drafts
+tree content/
+content/
+└── posts
+    └── hugo.md
 ```
-As you see on last command output, by default, all new content are created under `content` directory. `post` slag on post file name (`post/hugo.md`) is called *Content Type*. Is a way to organized your content, and is default content type in hugo when listing entries on *Home Page*.
+
+`post` slag on post file name (`post/hugo.md`) is called *Content Type*. Is a way to organized your content, and is default content type in Hugo when listing entries on *Home Page*.
 
 *Home Page* is first page you see when you open your site. It is a *List Page* by  default, but you can convert it to *Single Page*. Home Page is a special page, we will cover it on later sections.
 
