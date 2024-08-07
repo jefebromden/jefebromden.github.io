@@ -15,7 +15,10 @@ With CSS you can declare a style for a *tag* or group of tags, and apply it on a
 
 The options numbering is on purpose. That means style attributes has the highest precedence, it will override what was used on inline styles, and the latter will override stylesheets.
 
-## Style Attributes
+The following section and its subsections are just for reference, we're going to focus on stylesheets, because it's the most convenient. Attribute and inline styles are not needed when you can use an online tool for testing.
+
+## Style Sources
+### Style Attributes
 This type is useful to test a CSS property on a particular element, use on a *production website* should be avoided.
 
 Add a style attribute to the tag, with key/values separated by a colon (:), and ending with semicolon (;). You can add as many key/value pairs as you want.
@@ -23,8 +26,8 @@ Add a style attribute to the tag, with key/values separated by a colon (:), and 
 <h1 style="color: green;">Leonard Shelby</h1>
 ```
 
-## Inline Styles
-This type is useful to test your style before using it on external stylesheet. Also, some *frameworks* use it to *inject* styles using this method.
+### Inline Styles
+This method is useful to test your style before using it on external stylesheet. Also, some *frameworks* use it to *inject* styles using this method.
 
 To use it, inside a *html tag*, and before *body tag*, add a style tag inside a *head tag*. Valid CSS must be placed inside the style tag.
 ```html
@@ -37,8 +40,8 @@ To use it, inside a *html tag*, and before *body tag*, add a style tag inside a 
 </head>
 ```
 
-## External Stylesheets
-You must write valid CSS on a separate file:
+### External Stylesheets
+You must write valid CSS on a separate file first:
 ```css
 /* This is a comment */
 /* Save this content on style.css */
@@ -56,6 +59,6 @@ And then "call it" from your HTML document:
 
 You can omit `type="text/css"`, it's there just for completeness.
 
-### References
+## References
 - [CSS - Wikipedia](https://en.wikipedia.org/wiki/CSS)
 - [Style: The Style Information element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style)
