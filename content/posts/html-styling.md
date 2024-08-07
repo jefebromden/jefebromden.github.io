@@ -24,7 +24,7 @@ Add a style attribute to the tag, with key/values separated by a colon (:), and 
 ```
 
 ## Inline Styles
-This type is useful to test your style before using it on external stylesheet. Also, some *frameworks* use to *inject* styles using this method.
+This type is useful to test your style before using it on external stylesheet. Also, some *frameworks* use it to *inject* styles using this method.
 
 To use it, inside a *html tag*, and before *body tag*, add a style tag inside a *head tag*. Valid CSS must be placed inside the style tag.
 ```html
