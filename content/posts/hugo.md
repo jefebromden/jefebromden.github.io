@@ -389,5 +389,3 @@ cat > .gitignore << EOF
 .hugo_build.lock
 EOF
 ```
- ls
- 
