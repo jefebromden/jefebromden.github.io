@@ -16,7 +16,7 @@ With CSS you can declare a style for a *tag* or group of tags, and apply it on a
 The options numbering is on purpose. That means style attributes has the highest precedence, it will override what was used on inline styles, and the latter will override stylesheets.
 
 ## Style Attributes
-This type is useful to test a CSS property on a particular element, use on a production website should be avoided.
+This type is useful to test a CSS property on a particular element, use on a *production website* should be avoided.
 
 Add a style attribute to the tag, with key/values separated by a colon (:), and ending with semicolon (;). You can add as many key/value pairs as you want.
 ```html
