@@ -58,4 +58,4 @@ You can omit `type="text/css"`, it's there just for completeness.
 
 ### References
 - [CSS - Wikipedia](https://en.wikipedia.org/wiki/CSS)
-- [<style>: The Style Information element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style)
+- [Style: The Style Information element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style)
