@@ -59,6 +59,45 @@ And then "call it" from your HTML document:
 
 You can omit `type="text/css"`, it's there just for completeness.
 
+## What is a CSS Selector
+> In CSS, selectors declare which part of the markup a style applies to by matching tags and attributes in the markup itself. - Wikipedia
+
+Imagine you have a book, and you want to highlight different words and parts of a text in different ways. What you can do is take a bunch of markers of different colors to highlight passages, and a pencil to mark words and take notes. The *rules* you use is up to you. Which color is for definitions? Which one for quotes? Rounding a word with a circle or a square have different meaning?
+
+In the context of CSS, selectors are like markers and pencils, and the stylesheet is a list of rules. In our example, we use markers and pencils in different ways (a circle in pencil around a word) to reference something (a verb).
+
+Lets make an HTML *snippet* as an example:
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+  <!-- This is a minimal HTML document for testing -->
+  </body>
+</html>
+```
+
+If we want to change *background color* on this document, we should take *body tag* as selector.
+
+Syntax for the selector is, name of selector, and the properties you want to modify between curly braces:
+```css
+body {
+  /* In CSS, properties must be between curly braces */
+}
+```
+
+Properties, on the other hand, are key/value pairs, separated by a colon (:), and ending with a semicolon (;):
+```css
+body {
+  background-color: lightblue;
+}
+```
+
+You can use this CSS code as is for testing.
+
+For a list of color names for all browsers, take a look at [W3Schools page](https://www.w3schools.com/cssref/css_colors.php).
+
+If you want a list of color names grouped by *color palette*, visit [Austin Gil blog](https://austingil.com/css-named-colors/#palettes).
+
 ## References
 - [CSS - Wikipedia](https://en.wikipedia.org/wiki/CSS)
 - [Style: The Style Information element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style)
